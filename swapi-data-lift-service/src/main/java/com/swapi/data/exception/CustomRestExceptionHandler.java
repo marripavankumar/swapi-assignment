@@ -160,7 +160,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 
     // 500
 
-    @ExceptionHandler({ Exception.class })
+    	@ExceptionHandler({ Exception.class,DataNotFoundException.class,TypeNotFoundException.class })
     public ResponseEntity<Object> handleAll(final Exception ex, final WebRequest request) {
         logger.info(ex.getClass().getName());
         logger.error("error", ex);
